@@ -10,6 +10,7 @@ var active = document.getElementById("active"),
 
 // Listen for socket events from server
 socket.on("activeUsers", function (data) {
+  feedback.innerHTML = "";
   active.innerHTML = `<small id="active" class="text-secondary">Active Users: ${
     data.usersCount
   }, <br/> Chat Users: ${
@@ -24,6 +25,14 @@ btn.addEventListener("click", function () {
     handle: handle.value,
   });
   message.value = "";
+});
+
+message.addEventListener("keypress", function () {
+  socket.emit("typing", handle.value);
+});
+
+socket.on("typing", function (data) {
+  feedback.innerHTML = "<p><em>" + data + " is typing a message...</em></p>";
 });
 
 message.addEventListener("keydown", function (event) {

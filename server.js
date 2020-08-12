@@ -45,4 +45,9 @@ io.on("connection", (socket) => {
     activeChatUser.splice(index, 1);
     io.sockets.emit("activeUsers", { usersCount, activeChatUser });
   });
+
+  // boardcasting event when user is typing
+  socket.on("typing", function (data) {
+    socket.broadcast.emit("typing", data);
+  });
 });
