@@ -27,6 +27,22 @@ btn.addEventListener("click", function () {
   message.value = "";
 });
 
+message.addEventListener("keydown", function (event) {
+  if (event.which === 13 && event.shiftKey == false) {
+    socket.emit("chat", {
+      message: message.value,
+      handle: handle.value,
+    });
+    message.value = "";
+  }
+});
+
+// disable handle so that user cannot chage there name again
+function disableHandler() {
+  handle.disabled = true;
+  handle.style = "cursor: not-allowed;";
+}
+
 socket.on("sendToAllUsers", function (data) {
   output.innerHTML =
     "<p><strong>" +
@@ -36,5 +52,3 @@ socket.on("sendToAllUsers", function (data) {
     "</p>" +
     output.innerHTML;
 });
-
-
