@@ -1,0 +1,14 @@
+{
+  "name": "chat-io",
+  "version": "1.0.0",
+  "description": "a basic chat app",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Anil Bomma",
+  "license": "MIT"
+}
