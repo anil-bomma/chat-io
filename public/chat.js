@@ -10,7 +10,6 @@ var active = document.getElementById("active"),
 
 // Listen for socket events from server
 socket.on("activeUsers", function (data) {
-  console.log(data);
   active.innerHTML = `<small id="active" class="text-secondary">Active Users: ${
     data.usersCount
   }, <br/> Chat Users: ${
