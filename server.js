@@ -13,7 +13,6 @@ var usersCount = 0;
 var activeChatUser = [];
 var activeChatObj = {};
 
-
 // starting socket later will communicate with client by passing node server
 const io = socket(server);
 
@@ -23,7 +22,7 @@ io.on("connect", () => {
 });
 
 io.on("connection", (socket) => {
-  console.log("Total online users: ", usersCount, activeChatUser);
+  console.log("Total online users: ", usersCount);
 
   // sending userlist every time when new user is connected
   io.sockets.emit("activeUsers", { usersCount, activeChatUser });
