@@ -1,8 +1,13 @@
-# chat-io
+# Chat-io
 A basic chat app developed using socket.io
 
-# project set-up
+# Project set-up
 
-In the project directory,
+In the project directory, install node pacakges
+### `npm install`
 
-### `npm start`
+Start server
+### `node serve.js`
+
+Open below link in browser
+`http://localhost:3000/`
