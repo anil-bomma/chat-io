@@ -2,10 +2,9 @@
   "name": "chat-io",
   "version": "1.0.0",
   "description": "a basic chat app",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "node index.js",
-    "start": "node serve.js"
+    "start": "node server.js"
   },
   "keywords": [
     "node"
