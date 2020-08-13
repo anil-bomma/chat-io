@@ -10,4 +10,4 @@ Start server
 ### `node serve.js`
 
 Open below link in browser
-### `http://localhost:3000/`
+`http://localhost:3000/`
